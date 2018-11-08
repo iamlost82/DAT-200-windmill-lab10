@@ -1,0 +1,11 @@
+{
+  "name": "windmill",
+  "version": "1.0.0",
+  "description": "DAT-200, fal 2018, Windbill labtask",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Otto André Haaland",
+  "license": "ISC"
+}
