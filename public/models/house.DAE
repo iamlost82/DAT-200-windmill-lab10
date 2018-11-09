@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
-  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2018-11-08T00:32:15Z</created><keywords></keywords><modified>2018-11-08T00:32:15Z</modified><revision></revision><subject></subject><title></title><unit meter="0.025400" name="centimeter"></unit><up_axis>Z_UP</up_axis></asset>
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2018-11-09T09:25:53Z</created><keywords></keywords><modified>2018-11-09T09:25:53Z</modified><revision></revision><subject></subject><title></title><unit meter="0.025400" name="centimeter"></unit><up_axis>Z_UP</up_axis></asset>
   <library_images>
-    <image id="MapFBXASC032FBXASC0350-image" name="MapFBXASC032FBXASC0350"><init_from>file://C:\Users\unity\Google Drive\Skole UIA Høst 2018\DAT-200\Moddelleringsoppgaver\vindmølle\textures\house.jpg</init_from></image>
+    <image id="house_base_jpg-image" name="house_base_jpg"><init_from>texture\house.jpg</init_from></image>
   </library_images>
   <library_materials>
-    <material id="MaterialFBXASC032FBXASC0352" name="MaterialFBXASC032FBXASC0352">
-      <instance_effect url="#MaterialFBXASC032FBXASC0352-fx"/>
+    <material id="house_texture" name="house_texture">
+      <instance_effect url="#house_texture-fx"/>
     </material>
   </library_materials>
   <library_effects>
-    <effect id="MaterialFBXASC032FBXASC0352-fx" name="MaterialFBXASC032FBXASC0352">
+    <effect id="house_texture-fx" name="house_texture">
       <profile_COMMON>
         <technique sid="standard">
           <phong>
@@ -21,7 +21,7 @@
               <color sid="ambient">0.588000  0.588000 0.588000 1.000000</color>
             </ambient>
             <diffuse>
-              <texture texture="MapFBXASC032FBXASC0350-image" texcoord="CHANNEL0">
+              <texture texture="house_base_jpg-image" texcoord="CHANNEL0">
                 <extra>
                   <technique profile="MAYA">
                     <wrapU sid="wrapU0">TRUE</wrapU>
@@ -55,10 +55,10 @@
     </effect>
   </library_effects>
   <library_geometries>
-    <geometry id="Box003-lib" name="Box003Mesh">
+    <geometry id="house-lib" name="houseMesh">
       <mesh>
-        <source id="Box003-POSITION">
-          <float_array id="Box003-POSITION-array" count="138">
+        <source id="house-POSITION">
+          <float_array id="house-POSITION-array" count="138">
 -255.811371 -425.745636 0.000000
 0.000000 -425.745636 0.000000
 255.811371 -425.745636 0.000000
@@ -107,15 +107,15 @@
 274.511383 441.145630 114.924011
 </float_array>
           <technique_common>
-            <accessor source="#Box003-POSITION-array" count="46" stride="3">
+            <accessor source="#house-POSITION-array" count="46" stride="3">
               <param name="X" type="float"/>
               <param name="Y" type="float"/>
               <param name="Z" type="float"/>
             </accessor>
           </technique_common>
         </source>
-        <source id="Box003-Normal0">
-          <float_array id="Box003-Normal0-array" count="792">
+        <source id="house-Normal0">
+          <float_array id="house-Normal0-array" count="792">
 0.000000 0.000000 -1.000000
 0.000000 0.000000 -1.000000
 0.000000 0.000000 -1.000000
@@ -382,15 +382,15 @@
 0.520291 0.000000 -0.853989
 </float_array>
           <technique_common>
-            <accessor source="#Box003-Normal0-array" count="264" stride="3">
+            <accessor source="#house-Normal0-array" count="264" stride="3">
               <param name="X" type="float"/>
               <param name="Y" type="float"/>
               <param name="Z" type="float"/>
             </accessor>
           </technique_common>
         </source>
-        <source id="Box003-UV0">
-          <float_array id="Box003-UV0-array" count="204">
+        <source id="house-UV0">
+          <float_array id="house-UV0-array" count="204">
 0.391843 0.416929
 0.983129 0.416929
 0.983129 0.499645
@@ -495,22 +495,22 @@
 0.587593 0.279142
 </float_array>
           <technique_common>
-            <accessor source="#Box003-UV0-array" count="102" stride="2">
+            <accessor source="#house-UV0-array" count="102" stride="2">
               <param name="S" type="float"/>
               <param name="T" type="float"/>
             </accessor>
           </technique_common>
         </source>
-        <vertices id="Box003-VERTEX">
-          <input semantic="POSITION" source="#Box003-POSITION"/>
+        <vertices id="house-VERTEX">
+          <input semantic="POSITION" source="#house-POSITION"/>
         </vertices>
-        <triangles count="88" material="MaterialFBXASC032FBXASC0352"><input semantic="VERTEX" offset="0" source="#Box003-VERTEX"/><input semantic="NORMAL" offset="1" source="#Box003-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#Box003-UV0"/><p> 0 0 74 3 1 75 4 2 76 4 3 76 1 4 77 0 5 74 1 6 77 4 7 76 5 8 78 5 9 78 2 10 79 1 11 77 12 12 16 13 13 17 16 14 18 16 15 18 15 16 19 12 17 16 13 18 17 14 19 20 17 20 21 17 21 21 16 22 18 13 23 17 0 24 4 1 25 5 7 26 6 7 27 6 6 28 7 0 29 4 1 30 5 2 31 8 8 32 9 8 33 9 7 34 6 1 35 5 2 36 50 5 37 51 11 38 52 11 39 52 8 40 53 2 41 50 5 42 54 4 43 55 10 44 56 10 45 56 11 46 57 5 47 54 4 48 55 3 49 58 9 50 59 9 51 59 10 52 56 4 53 55 3 54 0 0 55 1 6 56 2 6 57 2 9 58 3 3 59 0 18 60 24 19 61 25 25 62 27 25 63 27 24 64 43 18 65 24 22 66 30 21 67 32 27 68 33 27 69 33 28 70 46 22 71 30 32 72 36 30 73 44 34 74 86 34 75 86 36 76 87 32 77 36 19 78 25 20 79 48 26 80 97 26 81 97 25 82 27 19 83 25 31 84 40 33 85 41 37 86 80 37 87 80 35 88 81 31 89 40 23 90 49 22 91 30 28 92 46 28 93 46 29 94 92 23 95 49 13 96 17 12 97 16 24 98 60 24 99 60 25 100 61 13 101 17 15 102 19 16 103 18 28 104 62 28 105 62 27 106 63 15 107 19 14 108 20 13 109 17 25 110 61 25 111 61 26 112 64 14 113 20 16 114 18 17 115 21 29 116 65 29 117 65 28 118 62 16 119 18 6 120 10 7 121 11 19 122 12 19 123 12 18 124 13 6 125 10 7 126 11 8 127 14 20 128 15 20 129 15 19 130 12 7 131 11 11 132 22 10 133 23 22 134 26 22 135 26 23 136 28 11 137 22 10 138 23 9 139 29 21 140 31 21 141 31 22 142 26 10 143 23 34 144 86 30 145 44 38 146 88 38 147 88 42 148 89 34 149 86 32 150 36 36 151 87 44 152 90 44 153 90 40 154 91 32 155 36 31 156 40 35 157 81 43 158 82 43 159 82 39 160 83 31 161 40 37 162 80 33 163 41 41 164 84 41 165 84 45 166 85 37 167 80 12 168 16 15 169 19 36 170 66 36 171 66 34 172 67 12 173 16 17 174 21 14 175 20 35 176 68 35 177 68 37 178 69 17 179 21 8 180 14 11 181 22 33 182 34 33 183 34 31 184 35 8 185 14 9 186 29 6 187 10 30 188 37 30 189 37 32 190 38 9 191 29 18 192 24 24 193 43 42 194 98 42 195 98 38 196 99 18 197 24 27 198 33 21 199 32 40 200 93 40 201 93 44 202 94 27 203 33 26 204 97 20 205 48 39 206 100 39 207 100 43 208 101 26 209 97 23 210 49 29 211 92 45 212 95 45 213 95 41 214 96 23 215 49 24 216 60 12 217 16 34 218 67 34 219 67 42 220 70 24 221 60 15 222 19 27 223 63 44 224 71 44 225 71 36 226 66 15 227 19 14 228 20 26 229 64 43 230 72 43 231 72 35 232 68 14 233 20 29 234 65 17 235 21 37 236 69 37 237 69 45 238 73 29 239 65 6 240 10 18 241 13 38 242 39 38 243 39 30 244 37 6 245 10 20 246 15 8 247 14 31 248 35 31 249 35 39 250 42 20 251 15 11 252 22 23 253 28 41 254 45 41 255 45 33 256 34 11 257 22 21 258 31 9 259 29 32 260 38 32 261 38 40 262 47 21 263 31</p></triangles>
+        <triangles count="88" material="house_texture"><input semantic="VERTEX" offset="0" source="#house-VERTEX"/><input semantic="NORMAL" offset="1" source="#house-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#house-UV0"/><p> 0 0 74 3 1 75 4 2 76 4 3 76 1 4 77 0 5 74 1 6 77 4 7 76 5 8 78 5 9 78 2 10 79 1 11 77 12 12 16 13 13 17 16 14 18 16 15 18 15 16 19 12 17 16 13 18 17 14 19 20 17 20 21 17 21 21 16 22 18 13 23 17 0 24 4 1 25 5 7 26 6 7 27 6 6 28 7 0 29 4 1 30 5 2 31 8 8 32 9 8 33 9 7 34 6 1 35 5 2 36 50 5 37 51 11 38 52 11 39 52 8 40 53 2 41 50 5 42 54 4 43 55 10 44 56 10 45 56 11 46 57 5 47 54 4 48 55 3 49 58 9 50 59 9 51 59 10 52 56 4 53 55 3 54 0 0 55 1 6 56 2 6 57 2 9 58 3 3 59 0 18 60 24 19 61 25 25 62 27 25 63 27 24 64 43 18 65 24 22 66 30 21 67 32 27 68 33 27 69 33 28 70 46 22 71 30 32 72 36 30 73 44 34 74 86 34 75 86 36 76 87 32 77 36 19 78 25 20 79 48 26 80 97 26 81 97 25 82 27 19 83 25 31 84 40 33 85 41 37 86 80 37 87 80 35 88 81 31 89 40 23 90 49 22 91 30 28 92 46 28 93 46 29 94 92 23 95 49 13 96 17 12 97 16 24 98 60 24 99 60 25 100 61 13 101 17 15 102 19 16 103 18 28 104 62 28 105 62 27 106 63 15 107 19 14 108 20 13 109 17 25 110 61 25 111 61 26 112 64 14 113 20 16 114 18 17 115 21 29 116 65 29 117 65 28 118 62 16 119 18 6 120 10 7 121 11 19 122 12 19 123 12 18 124 13 6 125 10 7 126 11 8 127 14 20 128 15 20 129 15 19 130 12 7 131 11 11 132 22 10 133 23 22 134 26 22 135 26 23 136 28 11 137 22 10 138 23 9 139 29 21 140 31 21 141 31 22 142 26 10 143 23 34 144 86 30 145 44 38 146 88 38 147 88 42 148 89 34 149 86 32 150 36 36 151 87 44 152 90 44 153 90 40 154 91 32 155 36 31 156 40 35 157 81 43 158 82 43 159 82 39 160 83 31 161 40 37 162 80 33 163 41 41 164 84 41 165 84 45 166 85 37 167 80 12 168 16 15 169 19 36 170 66 36 171 66 34 172 67 12 173 16 17 174 21 14 175 20 35 176 68 35 177 68 37 178 69 17 179 21 8 180 14 11 181 22 33 182 34 33 183 34 31 184 35 8 185 14 9 186 29 6 187 10 30 188 37 30 189 37 32 190 38 9 191 29 18 192 24 24 193 43 42 194 98 42 195 98 38 196 99 18 197 24 27 198 33 21 199 32 40 200 93 40 201 93 44 202 94 27 203 33 26 204 97 20 205 48 39 206 100 39 207 100 43 208 101 26 209 97 23 210 49 29 211 92 45 212 95 45 213 95 41 214 96 23 215 49 24 216 60 12 217 16 34 218 67 34 219 67 42 220 70 24 221 60 15 222 19 27 223 63 44 224 71 44 225 71 36 226 66 15 227 19 14 228 20 26 229 64 43 230 72 43 231 72 35 232 68 14 233 20 29 234 65 17 235 21 37 236 69 37 237 69 45 238 73 29 239 65 6 240 10 18 241 13 38 242 39 38 243 39 30 244 37 6 245 10 20 246 15 8 247 14 31 248 35 31 249 35 39 250 42 20 251 15 11 252 22 23 253 28 41 254 45 41 255 45 33 256 34 11 257 22 21 258 31 9 259 29 32 260 38 32 261 38 40 262 47 21 263 31</p></triangles>
       </mesh>
     </geometry>
   </library_geometries>
   <library_visual_scenes>
     <visual_scene id="house" name="house">
-      <node name="Box003" id="Box003" sid="Box003"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#Box003-lib"><bind_material><technique_common><instance_material symbol="MaterialFBXASC032FBXASC0352" target="#MaterialFBXASC032FBXASC0352"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="house" id="house" sid="house"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#house-lib"><bind_material><technique_common><instance_material symbol="house_texture" target="#house_texture"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
       <extra><technique profile="MAX3D"><frame_rate>30.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.000000</start_time><end_time>3.333333</end_time></technique></extra>
     </visual_scene>
   </library_visual_scenes>
